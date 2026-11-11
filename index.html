@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tân Trào - Lịch Sử & Du Lịch | Tổ 3carat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B2323',
+                        secondary: '#D4A574',
+                        accent: '#2C5F2D',
+                        light: '#FDF8F0',
+                        dark: '#2C1810',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'system-ui', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .hero-gradient {
+                background: linear-gradient(to bottom, rgba(44,24,16,0.55), rgba(44,24,16,0.8));
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans scroll-smooth">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-white text-xl font-bold flex items-center">
+                <i class="fa fa-gem mr-2 text-yellow-400"></i>
+                <span class="font-['Playfair_Display']">Tổ 3carat</span>
+            </a>
+            <div class="hidden md:flex space-x-5">
+                <a href="#gioi-thieu" class="text-white hover:text-yellow-400 transition-colors">Giới Thiệu</a>
+                <a href="#lich-su" class="text-white hover:text-yellow-400 transition-colors">Lịch Sử</a>
+                <a href="#di-tich" class="text-white hover:text-yellow-400 transition-colors">Di Tích</a>
+                <a href="#du-lich" class="text-white hover:text-yellow-400 transition-colors">Du Lịch</a>
+                <a href="#am-thuc" class="text-white hover:text-yellow-400 transition-colors">Ẩm Thực</a>
+                <a href="#thanh-vien" class="text-white hover:text-yellow-400 transition-colors">Thành Viên</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-sm">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#gioi-thieu" class="text-white py-2 hover:text-yellow-400">Giới Thiệu</a>
+                <a href="#lich-su" class="text-white py-2 hover:text-yellow-400">Lịch Sử</a>
+                <a href="#di-tich" class="text-white py-2 hover:text-yellow-400">Di Tích</a>
+                <a href="#du-lich" class="text-white py-2 hover:text-yellow-400">Du Lịch</a>
+                <a href="#am-thuc" class="text-white py-2 hover:text-yellow-400">Ẩm Thực</a>
+                <a href="#thanh-vien" class="text-white py-2 hover:text-yellow-400">Thành Viên</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Dùng ảnh Cây Đa làm ảnh nền chính -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="anh_cay_da.jpg" alt="Cây Đa Tân Trào - Thủ đô Khu giải phóng" class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <p class="text-yellow-400 text-lg md:text-xl mb-4 font-medium">👋 Chào mừng đến với</p>
+            <h1 class="text-[clamp(2rem,7vw,4.5rem)] font-bold text-white mb-3 font-['Playfair_Display'] leading-tight text-shadow">
+                Tân Trào
+            </h1>
+            <p class="text-xl md:text-2xl text-yellow-300/90 mb-6 font-semibold">Thủ đô Khu giải phóng - Tuyên Quang</p>
+            <p class="text-[clamp(1rem,3vw,1.25rem)] text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Nơi ghi dấu những trang sử hào hùng của dân tộc — Trình bày bởi <strong>Tổ 3carat</strong>
+            </p>
+            <a href="#gioi-thieu" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-dark font-semibold px-8 py-3 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                Khám Phá Ngay <i class="fa fa-arrow-down ml-2 animate-bounce inline-block"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Giới Thiệu -->
+        <section id="gioi-thieu" class="py-24 bg-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4 font-['Playfair_Display']">Về Tân Trào</h2>
+                    <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Trình bày bởi <strong>Tổ 3carat</strong> — Khám phá lịch sử và vẻ đẹp Tân Trào, Tuyên Quang</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Đất lịch sử và danh thắng</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">Tân Trào thuộc huyện Sơn Dương, tỉnh Tuyên Quang, được biết đến với tên gọi <strong>"Thủ đô Khu giải phóng"</strong> năm 1945 và <strong>"Thủ đô Kháng chiến"</strong> trong những năm chống Pháp. Nơi đây, Trung ương Đảng và Chủ tịch Hồ Chí Minh đã lãnh đạo nhân dân thực hiện Tổng khởi nghĩa Cách mạng Tháng Tám.</p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Khu di tích lịch sử Quốc gia đặc biệt Tân Trào có 18 di tích quốc gia và 30 di tích cấp tỉnh, kết hợp giữa giá trị lịch sử cách mạng và cảnh quan thiên nhiên đẹp, hùng vĩ.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">🏛️ Thủ đô Khu giải phóng</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">⭐ Di tích QG Đặc biệt</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">🌲 Du lịch sinh thái</span>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="anh_khu_di_tich.jpg" alt="Khu di tích Tân Trào" class="w-full h-auto rounded-xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lịch Sử -->
+        <section id="lich-su" class="py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4 font-['Playfair_Display']">Trang Sử Hào Hùng</h2>
+                    <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                </div>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">1945</div>
+                        <div class="pb-8 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-dark mb-2">Thành lập Khu Giải Phóng Việt Bắc</h3>
+                            <p class="text-gray-600">Ngày 4/6/1945, tại Lán Nà Lừa, Bác Hồ triệu tập Hội nghị cán bộ, quyết định thành lập Khu Giải phóng Việt Bắc — chính quyền cách mạng đầu tiên của nước Việt Nam Dân chủ Cộng hòa.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">8/1945</div>
+                        <div class="pb-8 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-dark mb-2">Quốc dân Đại hội Tân Trào</h3>
+                            <p class="text-gray-600">Ngày 16-17/8/1945, Quốc dân Đại hội họp tại Đình Tân Trào với 60 đại biểu, thông qua Tổng khởi nghĩa, 10 chính sách Việt Minh, bầu Ủy ban Dân tộc Giải phóng do Hồ Chí Minh làm Chủ tịch.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">8/1945</div>
+                        <div class="pb-8 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-dark mb-2">Lễ xuất quân dưới Cây Đa</h3>
+                            <p class="text-gray-600">Chiều 16/8/1945, dưới Cây đa Tân Trào, Đại tướng Võ Nguyên Giáp đọc Bản Quân lệnh số 1, làm lễ xuất quân Quân Giải phóng, mở đầu Tổng khởi nghĩa Cách mạng Tháng Tám.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">1947</div>
+                        <div class="pb-8 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-dark mb-2">Trung ương Đảng về Tân Trào</h3>
+                            <p class="text-gray-600">Sau khi Pháp chiếm Hà Nội, Trung ương Đảng, Chủ tịch Hồ Chí Minh và các cơ quan đầu não về Tân Trào, chỉ đạo cuộc kháng chiến toàn quốc chống Pháp.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-yellow-500 text-dark rounded-full flex items-center justify-center text-xl font-bold">Hiện nay</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark mb-2">Di tích Quốc gia Đặc biệt</h3>
+                            <p class="text-gray-600">Khu di tích Tân Trào được công nhận là Di tích Quốc gia Đặc biệt, là "địa chỉ đỏ" tiêu biểu, nơi hàng triệu người tìm về tri ân cội nguồn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Di Tích Lịch Sử với Ảnh Thực Tế -->
+        <section id="di-tich" class="py-24 bg-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4 font-['Playfair_Display']">🏛️ Các Di Tích Lịch Sử</h2>
+                    <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Hình ảnh thực tế các địa danh tại Khu di tích Tân Trào</p>
+                </div>
+                
+                <!-- Cây Đa Tân Trào -->
+                <div class="grid md:grid-cols-2 gap-10 items-center mb-16 bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div>
+                        <img src="anh_cay_da.jpg" alt="Cây Đa Tân Trào" class="w-full h-auto rounded-xl shadow-md">
+                        <p class="text-center text-sm text-gray-500 mt-2 italic">📷 Cây Đa Tân Trào - Biểu tượng của khu di tích</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">🌳 Cây Đa Tân Trào</h3>
+                        <p class="text-gray-700 mb-3">Cây đa cổ thụ hàng trăm năm tuổi, biểu tượng của Tân Trào, nằm ở thôn Tân Lập, xã Tân Trào.</p>
+                        <p class="text-gray-700"><strong>Chiều 16/8/1945</strong>, dưới gốc cây đa này, Đại tướng Võ Nguyên Giáp đã đọc Bản Quân lệnh số 1 và làm lễ xuất quân Quân Giải phóng Việt Nam, mở đầu Tổng khởi nghĩa Cách mạng Tháng Tám.</p>
+                    </div>
+                </div>
+
+                <!-- Đình Tân Trào -->
+                <div class="grid md:grid-cols-2 gap-10 items-center mb-16 bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-bold text-primary mb-4">🏛️ Đình Tân Trào</h3>
+                        <p class="text-gray-700 mb-3">Còn gọi là Đình Kim Long, công trình kiến trúc nhà sàn truyền thống, nơi diễn ra sự kiện lịch sử trọng đại.</p>
+                        <p class="text-gray-700"><strong>Ngày 16-17/8/1945</strong>, Quốc dân Đại hội Tân Trào đã họp tại đây, thông qua Nghị quyết Tổng khởi nghĩa và bầu ra Ủy ban Dân tộc Giải phóng do Chủ tịch Hồ Chí Minh làm Chủ tịch.</p>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="anh_dinh_tan_trao.jpg" alt="Đình Tân Trào" class="w-full h-auto rounded-xl shadow-md">
+                        <p class="text-center text-sm text-gray-500 mt-2 italic">📷 Đình Tân Trào - Nơi diễn ra Quốc dân Đại hội</p>
+                    </div>
+                </div>
+
+                <!-- Lán Nà Nưa -->
+                <div class="grid md:grid-cols-2 gap-10 items-center mb-16 bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+                    <div>
+                        <img src="anh_lan_na_nua.jpg" alt="Lán Nà Nưa" class="w-full h-auto rounded-xl shadow-md">
+                        <p class="text-center text-sm text-gray-500 mt-2 italic">📷 Lán Nà Nưa - Nơi ở và làm việc của Bác Hồ</p
